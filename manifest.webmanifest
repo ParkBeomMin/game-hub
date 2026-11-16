@@ -1,0 +1,15 @@
+{
+  "name": "Game Hub · BeomMin Park",
+  "short_name": "Game Hub",
+  "description": "Original browser games by BeomMin Park.",
+  "start_url": "/game-hub/",
+  "scope": "/game-hub/",
+  "display": "browser",
+  "background_color": "#07080f",
+  "theme_color": "#07080f",
+  "lang": "en",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

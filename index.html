@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Game Hub · BeomMin Park</title>
+  <meta name="description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
+  <link rel="canonical" href="https://parkbeommin.github.io/game-hub/">
+  <meta name="theme-color" content="#07080f">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="BeomMin Park">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Game Hub">
+  <meta property="og:url" content="https://parkbeommin.github.io/game-hub/">
+  <meta property="og:title" content="Game Hub · BeomMin Park">
+  <meta property="og:description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
+  <meta property="og:image" content="https://parkbeommin.github.io/game-hub/assets/og-image.png">
+  <meta property="og:image:alt" content="Game Hub — Trayora and Swingloom">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Game Hub · BeomMin Park">
+  <meta name="twitter:description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
+  <meta name="twitter:image" content="https://parkbeommin.github.io/game-hub/assets/og-image.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      var KEY = "gamehub.lang.v1";
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      var lang = (saved === "ko" || saved === "en")
+        ? saved
+        : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
+      var html = document.documentElement;
+      html.lang = lang;
+      html.setAttribute("data-lang", lang);
+      var meta = {
+        ko: {
+          title: "게임 허브 · 범민 게임",
+          desc: "직접 만든 브라우저 게임을 한곳에서. 트레이오라를 지금 플레이하고, 곧 공개될 스윙룸을 만나 보세요."
+        },
+        en: {
+          title: "Game Hub · BeomMin Park",
+          desc: "Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom."
+        }
+      };
+      document.title = meta[lang].title;
+      var desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute("content", meta[lang].desc);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">
+    <span class="i18n-ko">본문으로 건너뛰기</span>
+    <span class="i18n-en">Skip to content</span>
+  </a>
+
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+    <div class="orb orb-c"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <img class="brand-mark" src="assets/favicon.svg" width="36" height="36" alt="">
+        <span class="brand-text">
+          <span class="brand-name">
+            <span class="i18n-ko">게임 허브</span>
+            <span class="i18n-en">Game Hub</span>
+          </span>
+          <span class="brand-by">BeomMin Park</span>
+        </span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-set-lang="ko">한국어</button>
+        <button type="button" class="lang-btn" data-set-lang="en">English</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <p class="eyebrow">
+        <span class="i18n-ko">오리지널 브라우저 게임</span>
+        <span class="i18n-en">Original browser games</span>
+      </p>
+      <h1 class="hero-title">
+        <span class="i18n-ko">직접 만든 게임을<br>한곳에서</span>
+        <span class="i18n-en">Original games,<br>one place</span>
+      </h1>
+      <p class="lead">
+        <span class="i18n-ko">지금 바로 플레이할 수 있는 웹 게임과, 곧 공개될 신작을 모았습니다. 모든 게임과 에셋은 직접 제작했습니다.</span>
+        <span class="i18n-en">Playable web games and upcoming titles, all in one hub. Every game and asset is made by us.</span>
+      </p>
+    </section>
+
+    <section class="library wrap" aria-labelledby="games-heading">
+      <div class="section-head">
+        <h2 id="games-heading">
+          <span class="i18n-ko">게임</span>
+          <span class="i18n-en">Games</span>
+        </h2>
+        <p class="section-count" id="games-count" hidden></p>
+      </div>
+      <div id="game-grid" class="game-grid" aria-live="polite">
+        <article class="game-card skeleton" aria-hidden="true"></article>
+        <article class="game-card skeleton" aria-hidden="true"></article>
+      </div>
+      <p id="games-error" class="games-error" hidden>
+        <span class="i18n-ko">게임 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</span>
+        <span class="i18n-en">Couldn’t load the game list. Please try again in a moment.</span>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-note">
+        <span class="i18n-ko">모든 게임과 에셋은 직접 제작했습니다. 이 허브에는 광고가 없습니다.</span>
+        <span class="i18n-en">All games and assets are original. This hub has no ads.</span>
+      </p>
+      <p class="copyright">© 2026 BeomMin Park</p>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" hidden>
+    <button type="button" class="lightbox-close" data-lightbox-close>
+      <span class="i18n-ko">닫기</span>
+      <span class="i18n-en">Close</span>
+    </button>
+    <img id="lightbox-image" alt="">
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Game Hub">
+  <rect width="32" height="32" rx="8" fill="#101220"/>
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="5" y="5" width="9.5" height="9.5" rx="2.2" fill="#6ec8ff"/>
+  <rect x="17.5" y="5" width="9.5" height="9.5" rx="2.2" fill="#f0d24a"/>
+  <rect x="5" y="17.5" width="9.5" height="9.5" rx="2.2" fill="#8fd18a"/>
+  <rect x="17.5" y="17.5" width="9.5" height="9.5" rx="2.2" fill="#c084fc"/>
+</svg>

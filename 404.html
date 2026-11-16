@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Not found · Game Hub</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07080f">
+  <link rel="icon" href="/game-hub/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/game-hub/css/style.css">
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("gamehub.lang.v1"); } catch (e) {}
+      var lang = (saved === "ko" || saved === "en")
+        ? saved
+        : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute("data-lang", lang);
+      document.title = lang === "ko" ? "페이지를 찾을 수 없습니다 · 게임 허브" : "Not found · Game Hub";
+    })();
+  </script>
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="orb orb-a"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <main class="hero wrap" style="padding-top: 18vh; text-align: center;">
+    <p class="eyebrow">404</p>
+    <h1 class="hero-title">
+      <span class="i18n-ko">페이지를 찾을 수 없습니다</span>
+      <span class="i18n-en">Page not found</span>
+    </h1>
+    <p class="lead">
+      <span class="i18n-ko">주소가 바뀌었거나 잘못된 경로입니다.</span>
+      <span class="i18n-en">This path doesn’t exist, or the address has changed.</span>
+    </p>
+    <p style="margin-top: 28px;">
+      <a class="btn btn-primary" href="/game-hub/">
+        <span class="i18n-ko">게임 허브로 돌아가기</span>
+        <span class="i18n-en">Back to Game Hub</span>
+      </a>
+    </p>
+  </main>
+</body>
+</html>

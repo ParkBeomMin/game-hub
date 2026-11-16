@@ -1,0 +1,48 @@
+{
+  "games": [
+    {
+      "id": "trayora",
+      "name": {
+        "ko": "트레이오라",
+        "en": "Trayora"
+      },
+      "shortDescription": {
+        "ko": "블록을 놓고 줄을 지워 점수를 쌓는 캐주얼 퍼즐. 클래식과 어드벤처 모드를 브라우저에서 바로 플레이하세요.",
+        "en": "Place blocks, clear lines, and chase a new high score. Classic and Adventure modes, ready to play in the browser."
+      },
+      "thumbnail": "assets/games/trayora-thumb.webp",
+      "screenshots": [
+        "assets/games/trayora-shot-1.webp",
+        "assets/games/trayora-shot-2.webp",
+        "assets/games/trayora-shot-3.webp"
+      ],
+      "tags": {
+        "ko": ["블록 퍼즐", "캐주얼"],
+        "en": ["Block puzzle", "Casual"]
+      },
+      "status": "live",
+      "playMode": "self",
+      "url": "https://parkbeommin.github.io/block-lab/"
+    },
+    {
+      "id": "swingloom",
+      "name": {
+        "ko": "스윙룸",
+        "en": "Swingloom"
+      },
+      "shortDescription": {
+        "ko": "등불 정령 핍과 함께, 한 번의 조작으로 핀에 매달리고 도약하는 스윙 액션. 네 개의 월드를 탐험하세요.",
+        "en": "Swing, reel, and leap as Pip the lantern spirit — a one-button hook-and-swing adventure across four worlds."
+      },
+      "thumbnail": "assets/games/swingloom-thumb.webp",
+      "screenshots": [],
+      "tags": {
+        "ko": ["원버튼", "스윙 액션"],
+        "en": ["One-button", "Swing"]
+      },
+      "status": "coming soon",
+      "playMode": "self",
+      "url": null
+    }
+  ]
+}
