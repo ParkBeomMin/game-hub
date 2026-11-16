@@ -17,8 +17,14 @@
         "assets/games/trayora-shot-3.webp"
       ],
       "tags": {
-        "ko": ["블록 퍼즐", "캐주얼"],
-        "en": ["Block puzzle", "Casual"]
+        "ko": [
+          "블록 퍼즐",
+          "캐주얼"
+        ],
+        "en": [
+          "Block puzzle",
+          "Casual"
+        ]
       },
       "status": "live",
       "playMode": "self",
@@ -35,14 +41,24 @@
         "en": "Swing, reel, and leap as Pip the lantern spirit — a one-button hook-and-swing adventure across four worlds."
       },
       "thumbnail": "assets/games/swingloom-thumb.webp",
-      "screenshots": [],
+      "screenshots": [
+        "assets/games/swingloom-shot-1.webp",
+        "assets/games/swingloom-shot-2.webp",
+        "assets/games/swingloom-shot-3.webp"
+      ],
       "tags": {
-        "ko": ["원버튼", "스윙 액션"],
-        "en": ["One-button", "Swing"]
+        "ko": [
+          "원버튼",
+          "스윙 액션"
+        ],
+        "en": [
+          "One-button",
+          "Swing"
+        ]
       },
-      "status": "coming soon",
+      "status": "live",
       "playMode": "self",
-      "url": null
+      "url": "https://parkbeommin.github.io/swingloom/"
     }
   ]
 }
