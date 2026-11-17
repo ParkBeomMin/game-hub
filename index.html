@@ -2,6 +2,21 @@
 <html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFCCN0JDX6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LFCCN0JDX6', { allow_google_signals: false, allow_ad_personalization_signals: false });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.href || '';
+      if (h.indexOf('/game-hub') === -1 && /parkbeommin\.github\.io\/|poki\.com|crazygames\.com/.test(h)) {
+        gtag('event', 'play_click', { link_url: h, transport_type: 'beacon' });
+      }
+    }, true);
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Game Hub · BeomMin Park</title>
   <meta name="description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
