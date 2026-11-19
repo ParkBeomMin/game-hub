@@ -18,144 +18,135 @@
     }, true);
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Game Hub · BeomMin Park</title>
-  <meta name="description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
+  <title>Game Hub — free browser games from BeomMin’s workshop</title>
+  <meta name="description" content="A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC.">
   <link rel="canonical" href="https://parkbeommin.github.io/game-hub/">
-  <meta name="theme-color" content="#07080f">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0f1115">
   <meta name="author" content="BeomMin Park">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Game Hub">
   <meta property="og:url" content="https://parkbeommin.github.io/game-hub/">
-  <meta property="og:title" content="Game Hub · BeomMin Park">
-  <meta property="og:description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
+  <meta property="og:title" content="Game Hub — free browser games from BeomMin’s workshop">
+  <meta property="og:description" content="A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC.">
   <meta property="og:image" content="https://parkbeommin.github.io/game-hub/assets/og-image.png">
-  <meta property="og:image:alt" content="Game Hub — Trayora and Swingloom">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ko_KR">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Game Hub · BeomMin Park">
-  <meta name="twitter:description" content="Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom.">
+  <meta name="twitter:title" content="Game Hub — free browser games from BeomMin’s workshop">
+  <meta name="twitter:description" content="A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC.">
   <meta name="twitter:image" content="https://parkbeommin.github.io/game-hub/assets/og-image.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Game Hub","alternateName":"게임 허브","url":"https://parkbeommin.github.io/game-hub/","inLanguage":["ko","en"]}</script>
   <script>
     (function () {
-      var KEY = "gamehub.lang.v1";
-      var saved = null;
-      try { saved = localStorage.getItem(KEY); } catch (e) {}
-      var lang = (saved === "ko" || saved === "en")
-        ? saved
-        : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
-      var html = document.documentElement;
-      html.lang = lang;
-      html.setAttribute("data-lang", lang);
-      var meta = {
-        ko: {
-          title: "게임 허브 · 범민 게임",
-          desc: "직접 만든 브라우저 게임을 한곳에서. 트레이오라를 지금 플레이하고, 곧 공개될 스윙룸을 만나 보세요."
-        },
-        en: {
-          title: "Game Hub · BeomMin Park",
-          desc: "Original browser games by BeomMin Park. Play Trayora now, and look out for Swingloom."
-        }
-      };
-      document.title = meta[lang].title;
-      var desc = document.querySelector('meta[name="description"]');
-      if (desc) desc.setAttribute("content", meta[lang].desc);
+      var s = null; try { s = localStorage.getItem("gamehub.lang.v1"); } catch (e) {}
+      var l = (s === "ko" || s === "en") ? s : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
+      document.documentElement.lang = l; document.documentElement.setAttribute("data-lang", l);
     })();
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">
-    <span class="i18n-ko">본문으로 건너뛰기</span>
-    <span class="i18n-en">Skip to content</span>
-  </a>
-
-  <div class="atmosphere" aria-hidden="true">
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-    <div class="orb orb-c"></div>
-    <div class="grid-lines"></div>
-  </div>
-
-  <header class="site-header">
-    <div class="wrap header-inner">
+  <header class="nav">
+    <div class="nav-in">
       <a class="brand" href="./">
-        <img class="brand-mark" src="assets/favicon.svg" width="36" height="36" alt="">
-        <span class="brand-text">
-          <span class="brand-name">
-            <span class="i18n-ko">게임 허브</span>
-            <span class="i18n-en">Game Hub</span>
-          </span>
-          <span class="brand-by">BeomMin Park</span>
-        </span>
+        <img src="assets/favicon.svg" width="30" height="30" alt="">
+        <span class="brand-name"><span class="i18n-ko">게임 허브</span><span class="i18n-en">GAME HUB</span></span>
+        <span class="brand-sub"><span class="i18n-ko">범민 공방</span><span class="i18n-en">by BeomMin</span></span>
       </a>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button type="button" class="lang-btn" data-set-lang="ko">한국어</button>
-        <button type="button" class="lang-btn" data-set-lang="en">English</button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#featured"><span class="i18n-ko">추천</span><span class="i18n-en">Featured</span></a>
+        <a href="#browse"><span class="i18n-ko">둘러보기</span><span class="i18n-en">Browse</span></a>
+        <a href="#genres"><span class="i18n-ko">장르</span><span class="i18n-en">Genres</span></a>
+        <a href="#help"><span class="i18n-ko">안내</span><span class="i18n-en">Help</span></a>
+      </nav>
+      <label class="search">
+        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" autocomplete="off" data-ph-ko="게임 이름이나 장르" data-ph-en="Game or genre" aria-label="Search">
+      </label>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-set-lang="ko">한국어</button>
+        <button type="button" data-set-lang="en">EN</button>
       </div>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero wrap">
-      <p class="eyebrow">
-        <span class="i18n-ko">오리지널 브라우저 게임</span>
-        <span class="i18n-en">Original browser games</span>
-      </p>
-      <h1 class="hero-title">
-        <span class="i18n-ko">직접 만든 게임을<br>한곳에서</span>
-        <span class="i18n-en">Original games,<br>one place</span>
-      </h1>
-      <p class="lead">
-        <span class="i18n-ko">지금 바로 플레이할 수 있는 웹 게임과, 곧 공개될 신작을 모았습니다. 모든 게임과 에셋은 직접 제작했습니다.</span>
-        <span class="i18n-en">Playable web games and upcoming titles, all in one hub. Every game and asset is made by us.</span>
-      </p>
+  <main>
+    <section id="featured" class="wrap featured-sec" aria-labelledby="feat-h">
+      <div class="row-head">
+        <h1 id="feat-h"><span class="i18n-ko">추천 · 신작</span><span class="i18n-en">Featured &amp; new</span></h1>
+        <p class="row-note"><span class="i18n-ko">전부 무료 · 설치 없이 브라우저에서 바로</span><span class="i18n-en">All free · runs right in your browser</span></p>
+      </div>
+      <div class="carousel" id="carousel">
+        <div class="car-stage" id="car-stage"></div>
+      </div>
+      <div class="car-ctrl"><button class="car-arrow prev" type="button" aria-label="Previous" data-car="-1"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="car-dots" id="car-dots"></div>
+        <button class="car-arrow next" type="button" aria-label="Next" data-car="1"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M7.5 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
     </section>
 
-    <section class="library wrap" aria-labelledby="games-heading">
-      <div class="section-head">
-        <h2 id="games-heading">
-          <span class="i18n-ko">게임</span>
-          <span class="i18n-en">Games</span>
-        </h2>
-        <p class="section-count" id="games-count" hidden></p>
+    <section class="wrap" aria-labelledby="cap-h">
+      <div class="row-head">
+        <h2 id="cap-h"><span class="i18n-ko">지금 바로 할 수 있는 게임</span><span class="i18n-en">Play right now</span></h2>
+        <p class="row-note hover-only"><span class="i18n-ko">카드에 마우스를 올리면 플레이 화면이 넘어가요</span><span class="i18n-en">Hover a card to flip through gameplay</span></p>
       </div>
-      <div id="game-grid" class="game-grid" aria-live="polite">
-        <article class="game-card skeleton" aria-hidden="true"></article>
-        <article class="game-card skeleton" aria-hidden="true"></article>
-      </div>
-      <p id="games-error" class="games-error" hidden>
-        <span class="i18n-ko">게임 목록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</span>
-        <span class="i18n-en">Couldn’t load the game list. Please try again in a moment.</span>
-      </p>
+      <div id="capsules" class="capsules"></div>
     </section>
+
+    <section id="browse" class="wrap browse" aria-labelledby="browse-h">
+      <h2 id="browse-h" class="sr"><span class="i18n-ko">둘러보기</span><span class="i18n-en">Browse</span></h2>
+      <div class="tabs" role="tablist" aria-label="Browse">
+        <button role="tab" type="button" data-tab="new"><span class="i18n-ko">신작</span><span class="i18n-en">New releases</span></button>
+        <button role="tab" type="button" data-tab="all"><span class="i18n-ko">모든 게임</span><span class="i18n-en">All games</span></button>
+        <button role="tab" type="button" data-tab="genre"><span class="i18n-ko">장르별</span><span class="i18n-en">By genre</span></button>
+      </div>
+      <div class="browse-grid">
+        <div id="list" class="list" role="tabpanel"></div>
+        <aside id="detail" class="detail" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <section id="genres" class="wrap" aria-labelledby="genre-h">
+      <div class="row-head"><h2 id="genre-h"><span class="i18n-ko">장르로 둘러보기</span><span class="i18n-en">Browse by genre</span></h2></div>
+      <div id="genre-tiles" class="genre-tiles"></div>
+    </section>
+
+    <section class="wrap two-col" aria-label="Workshop">
+      <div class="panel log">
+        <h2><span class="i18n-ko">공방 출시 기록</span><span class="i18n-en">Release log</span></h2>
+        <ol id="release-log"></ol>
+      </div>
+      <div id="help" class="panel help">
+        <h2><span class="i18n-ko">처음 오셨나요?</span><span class="i18n-en">New here?</span></h2>
+        <dl>
+          <dt><span class="i18n-ko">가격은요?</span><span class="i18n-en">Price?</span></dt>
+          <dd><span class="i18n-ko">전부 무료예요. 계정도 로그인도 없어요.</span><span class="i18n-en">Everything is free. No account, no login.</span></dd>
+          <dt><span class="i18n-ko">뭘 설치해야 하나요?</span><span class="i18n-en">Anything to install?</span></dt>
+          <dd><span class="i18n-ko">없어요. 버튼을 누르면 휴대폰이나 PC 브라우저에서 바로 켜져요.</span><span class="i18n-en">Nothing. Hit the button and it opens in your phone or PC browser.</span></dd>
+          <dt><span class="i18n-ko">게임은 몇 개예요?</span><span class="i18n-en">How many games?</span></dt>
+          <dd><span class="i18n-ko"><b data-live-count>3</b>개: <span data-live-names>트레이오라, 스윙룸, 덜컹카트</span></span><span class="i18n-en"><b data-live-count>3</b>: <span data-live-names>Trayora, Swingloom, Rattlecart</span></span></dd>
+          <dt><span class="i18n-ko">광고는요?</span><span class="i18n-en">Ads?</span></dt>
+          <dd><span class="i18n-ko">무료로 운영하려고 게임 안에서 광고가 나올 수 있어요. 이 허브 페이지엔 없어요.</span><span class="i18n-en">Games may show ads to stay free. This hub page has none.</span></dd>
+        </dl>
+      </div>
+    </section>
+    <p id="games-error" class="wrap err" hidden><span class="i18n-ko">게임 목록을 불러오지 못했어요. 새로고침해 주세요.</span><span class="i18n-en">Couldn’t load the games. Please refresh.</span></p>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p class="footer-note">
-        <span class="i18n-ko">모든 게임과 에셋은 직접 제작했습니다. 이 허브에는 광고가 없습니다.</span>
-        <span class="i18n-en">All games and assets are original. This hub has no ads.</span>
-      </p>
-      <p class="copyright">© 2026 BeomMin Park</p>
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <span class="brand-name small"><span class="i18n-ko">게임 허브</span><span class="i18n-en">GAME HUB</span></span>
+      <span><span class="i18n-ko">모든 게임의 그림과 소리는 범민 공방에서 직접 만들었어요.</span><span class="i18n-en">Every game’s art and sound is made in-house.</span></span>
+      <span class="muted">© 2026 BeomMin Park</span>
     </div>
   </footer>
-
-  <div id="lightbox" class="lightbox" hidden>
-    <button type="button" class="lightbox-close" data-lightbox-close>
-      <span class="i18n-ko">닫기</span>
-      <span class="i18n-en">Close</span>
-    </button>
-    <img id="lightbox-image" alt="">
-  </div>
-
   <script src="js/app.js" defer></script>
+  <script src="js/core.js" defer></script>
 </body>
 </html>

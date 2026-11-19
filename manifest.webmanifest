@@ -1,12 +1,12 @@
 {
   "name": "Game Hub · BeomMin Park",
   "short_name": "Game Hub",
-  "description": "Original browser games by BeomMin Park.",
+  "description": "Free browser games made by BeomMin Park. No install, no sign-up.",
   "start_url": "/game-hub/",
   "scope": "/game-hub/",
   "display": "browser",
-  "background_color": "#07080f",
-  "theme_color": "#07080f",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
   "lang": "en",
   "icons": [
     { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },

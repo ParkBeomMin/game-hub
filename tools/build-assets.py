@@ -136,9 +136,6 @@ def trayora_thumb() -> None:
     out = Image.alpha_composite(out, shadow)
     out.paste(board, (x, y), board)
     save_webp(out.convert("RGB"), GAMES / "trayora-thumb.webp")
-    # also a compact square for icons / future use
-    sq = src.resize((640, 640), Image.Resampling.LANCZOS)
-    save_webp(sq, GAMES / "trayora-thumb-square.webp")
 
 
 def trayora_shots() -> None:
@@ -164,112 +161,6 @@ def swingloom_thumb() -> None:
     crop = body.crop((left, 0, left + new_w, bh))
     cover = crop.resize((1280, 720), Image.Resampling.LANCZOS)
     save_webp(cover, GAMES / "swingloom-thumb.webp")
-
-
-def og_image() -> None:
-    W, H = 1200, 630
-    canvas = Image.new("RGB", (W, H), BG)
-    dtmp = ImageDraw.Draw(canvas)
-
-    # background atmosphere
-    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    od = ImageDraw.Draw(overlay)
-    # orbs
-    def orb(cx, cy, r, color, a):
-        layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-        blob = Image.new("L", (r * 2, r * 2), 0)
-        bd = ImageDraw.Draw(blob)
-        for i in range(r, 0, -1):
-            alpha = int(a * (i / r) ** 2)
-            bd.ellipse((r - i, r - i, r + i, r + i), fill=alpha)
-        tint = Image.new("RGBA", (r * 2, r * 2), color + (0,))
-        tint.putalpha(blob)
-        layer.paste(tint, (cx - r, cy - r), tint)
-        return layer
-
-    overlay = Image.alpha_composite(overlay, orb(180, 120, 260, (40, 70, 140), 90))
-    overlay = Image.alpha_composite(overlay, orb(200, 500, 220, (90, 50, 160), 70))
-    overlay = Image.alpha_composite(overlay, orb(1000, 80, 280, (40, 120, 110), 80))
-    overlay = Image.alpha_composite(overlay, orb(980, 540, 240, (160, 110, 40), 70))
-    canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay)
-
-    # faint grid
-    grid = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    gd = ImageDraw.Draw(grid)
-    for x in range(0, W, 40):
-        gd.line((x, 0, x, H), fill=(255, 255, 255, 14))
-    for y in range(0, H, 40):
-        gd.line((0, y, W, y), fill=(255, 255, 255, 14))
-    canvas = Image.alpha_composite(canvas, grid)
-
-    # game stills on the right, overlapping
-    tray = Image.open(TRAYORA_SHOTS[0]).convert("RGB")
-    swing = Image.open(SWING_SRC).convert("RGB")
-    # crop swing similarly
-    sw, sh = swing.size
-    top = int(sh * 0.13)
-    body = swing.crop((0, top, sw, sh))
-    swing = ImageOps.fit(body, (560, 315), method=Image.Resampling.LANCZOS, centering=(0.42, 0.45))
-    tray = ImageOps.fit(tray, (560, 315), method=Image.Resampling.LANCZOS, centering=(0.35, 0.5))
-
-    def framed(im, radius=22):
-        pad = 6
-        base = Image.new("RGBA", (im.width + pad * 2, im.height + pad * 2), (0, 0, 0, 0))
-        # border glow
-        bd = ImageDraw.Draw(base)
-        bd.rounded_rectangle((0, 0, base.width - 1, base.height - 1), radius + 4, fill=(255, 255, 255, 28))
-        inner = rounded(im, radius)
-        base.paste(inner, (pad, pad), inner)
-        return base
-
-    t = framed(tray)
-    s = framed(swing)
-
-    def drop(card, xy, blur=16):
-        shad = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
-        mask = card.split()[-1]
-        blob = Image.new("RGBA", card.size, (0, 0, 0, 180))
-        shad.paste(blob, (xy[0], xy[1] + 10), mask)
-        shad = shad.filter(ImageFilter.GaussianBlur(blur))
-        return shad
-
-    pos_s = (620, 300)
-    pos_t = (640, 78)
-    canvas = Image.alpha_composite(canvas, drop(t, pos_t))
-    canvas.paste(t, pos_t, t)
-    canvas = Image.alpha_composite(canvas, drop(s, pos_s))
-    canvas.paste(s, pos_s, s)
-
-    draw = ImageDraw.Draw(canvas)
-
-    # mark (2x2 blocks)
-    mark = draw_mark(88)
-    canvas.paste(mark, (72, 78), mark)
-
-    # typography
-    try:
-        f_display = font(FONT_DISPLAY, 118, weight=800)
-    except Exception:
-        f_display = font(FONT_SAUCE_BLK, 86)
-    f_ko = font(FONT_PRETENDARD_B, 36)
-    f_sub = font(FONT_PRETENDARD_M, 26)
-    f_by = font(FONT_PRETENDARD_S, 22)
-
-    draw.text((72, 188), "GAME HUB", font=f_display, fill=TEXT)
-    draw.text((76, 318), "게임 허브", font=f_ko, fill=GOLD)
-    draw.text((76, 380), "Original browser games", font=f_sub, fill=MUTED)
-    draw.text((76, 424), "Trayora  ·  Swingloom", font=f_sub, fill=CYAN)
-    draw.text((76, 546), "BeomMin Park", font=f_by, fill=(180, 184, 200))
-
-    out = canvas.convert("RGB")
-    dest = ASSETS / "og-image.png"
-    # compress reasonably
-    out.save(dest, "PNG", optimize=True)
-    print(f"  {dest.name}: {dest.stat().st_size} bytes {out.size}")
-    # jpeg fallback for picky crawlers
-    jpg = ASSETS / "og-image.jpg"
-    out.save(jpg, "JPEG", quality=90, optimize=True, subsampling=1)
-    print(f"  {jpg.name}: {jpg.stat().st_size} bytes {out.size}")
 
 
 def draw_mark(size: int) -> Image.Image:
@@ -338,7 +229,6 @@ def main() -> None:
     trayora_thumb()
     trayora_shots()
     swingloom_thumb()
-    og_image()
     print("done")
 
 

@@ -5,7 +5,7 @@ BeomMin Park의 오리지널 브라우저 게임을 모아 두는 허브입니�
 - 라이브: https://parkbeommin.github.io/game-hub/
 - 저장소: https://github.com/ParkBeomMin/game-hub
 
-광고 스크립트는 넣지 않았습니다. 모든 게임과 에셋은 직접 제작한 것입니다.
+허브 페이지에는 광고 스크립트를 넣지 않았습니다(GA4 측정만 있음). 모든 게임과 에셋은 직접 제작한 것입니다.
 
 ## 새 게임 추가하는 법
 
@@ -22,6 +22,9 @@ BeomMin Park의 오리지널 브라우저 게임을 모아 두는 허브입니�
 | `status` | `"live"` 또는 `"coming soon"` |
 | `playMode` | `"self"`(우리가 호스팅한 플레이 URL) 또는 `"portal"`(Poki 등 포털 페이지 URL) |
 | `url` | 플레이 링크. 아직 없으면 `null`. `status`가 `"coming soon"`이면 버튼이 비활성화됩니다. |
+| `released` | 공개일 `"YYYY-MM-DD"`(서울 시간 기준, 게임 저장소를 처음 공개한 날). 상세 패널·목록·출시 기록에 표시되고, 신작 순서도 이 날짜로 정합니다. 새 게임을 추가할 때 **꼭 함께 넣어 주세요.** 없으면 공개일이 "—"로 보이고 배열 순서(뒤쪽 = 최신)로 정렬합니다. |
+| `featured` | 선택. `true`면 추천 캐러셀 첫 장에 고정합니다. 없으면 가장 최신 게임이 첫 장입니다. |
+| `platforms` | 선택. `{ "ko": "...", "en": "..." }` 형태의 지원 기기 문구. 없으면 "휴대폰 · PC (브라우저)"로 표시합니다. |
 
 예시:
 
@@ -34,6 +37,7 @@ BeomMin Park의 오리지널 브라우저 게임을 모아 두는 허브입니�
   "screenshots": [],
   "tags": { "ko": ["퍼즐"], "en": ["Puzzle"] },
   "status": "live",
+  "released": "2026-11-23",
   "playMode": "self",
   "url": "https://parkbeommin.github.io/new-game/"
 }
@@ -49,7 +53,14 @@ Poki 독점처럼 포털로만 플레이하게 바꿀 때는 해당 항목만 �
 
 언어는 `navigator.language`가 `ko`로 시작하면 한국어, 아니면 영어이며, 선택은 `localStorage` 키 `gamehub.lang.v1`에 저장됩니다.
 
-표지·OG 이미지를 다시 만들 때는 `python3 tools/build-assets.py`를 실행하세요. 원본은 이 저장소가 아니라 로컬 작업 폴더의 제출용 스크린샷을 읽습니다.
+OG 이미지는 `python3 tools/build-og.py`로 다시 만듭니다. `games.json`의 공개일 기준 최신 게임 3개 썸네일을 쓰니, 새 게임을 올린 뒤 실행하세요. 트레이오라·스윙룸 표지와 아이콘은 `python3 tools/build-assets.py`로 만듭니다(원본은 로컬 작업 폴더의 스크린샷).
+
+## 구조
+
+- `index.html`: 스토어형 레이아웃(추천 캐러셀, 바로 플레이 카드, 신작/모든 게임/장르별 탭과 상세 패널, 장르 타일, 출시 기록, FAQ)
+- `js/core.js`: `games.json` 로드, 언어 전환, 정렬
+- `js/app.js`: 화면 그리기
+- `css/style.css`: 스타일. 폰트는 Google Fonts의 Black Han Sans와 IBM Plex Sans KR(둘 다 OFL)
 
 ## 로컬에서 보기
 

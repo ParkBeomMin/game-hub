@@ -5,39 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Not found · Game Hub</title>
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#07080f">
+  <meta name="theme-color" content="#0f1115">
   <link rel="icon" href="/game-hub/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;700&display=swap">
   <link rel="stylesheet" href="/game-hub/css/style.css">
   <script>
     (function () {
-      var saved = null;
-      try { saved = localStorage.getItem("gamehub.lang.v1"); } catch (e) {}
-      var lang = (saved === "ko" || saved === "en")
-        ? saved
-        : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
-      document.documentElement.lang = lang;
-      document.documentElement.setAttribute("data-lang", lang);
-      document.title = lang === "ko" ? "페이지를 찾을 수 없습니다 · 게임 허브" : "Not found · Game Hub";
+      var s = null; try { s = localStorage.getItem("gamehub.lang.v1"); } catch (e) {}
+      var l = (s === "ko" || s === "en") ? s : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
+      document.documentElement.lang = l; document.documentElement.setAttribute("data-lang", l);
+      document.title = l === "ko" ? "페이지를 찾을 수 없어요 · 게임 허브" : "Not found · Game Hub";
     })();
   </script>
 </head>
 <body>
-  <div class="atmosphere" aria-hidden="true">
-    <div class="orb orb-a"></div>
-    <div class="grid-lines"></div>
-  </div>
-  <main class="hero wrap" style="padding-top: 18vh; text-align: center;">
-    <p class="eyebrow">404</p>
-    <h1 class="hero-title">
-      <span class="i18n-ko">페이지를 찾을 수 없습니다</span>
-      <span class="i18n-en">Page not found</span>
+  <main class="wrap" style="min-height:80vh;display:grid;place-content:center;text-align:center;gap:14px">
+    <p class="brand-name" style="color:var(--amber);font-size:3rem;margin:0">404</p>
+    <h1 style="margin:0;font-size:1.4rem">
+      <span class="i18n-ko">이 주소에는 게임이 없어요</span>
+      <span class="i18n-en">There’s no game at this address</span>
     </h1>
-    <p class="lead">
-      <span class="i18n-ko">주소가 바뀌었거나 잘못된 경로입니다.</span>
-      <span class="i18n-en">This path doesn’t exist, or the address has changed.</span>
+    <p class="muted" style="margin:0">
+      <span class="i18n-ko">주소가 바뀌었거나 잘못 입력된 것 같아요.</span>
+      <span class="i18n-en">The link may have changed or been mistyped.</span>
     </p>
-    <p style="margin-top: 28px;">
-      <a class="btn btn-primary" href="/game-hub/">
+    <p style="margin:10px auto 0;width:240px" class="buy">
+      <a class="btn-play" href="/game-hub/">
         <span class="i18n-ko">게임 허브로 돌아가기</span>
         <span class="i18n-en">Back to Game Hub</span>
       </a>
