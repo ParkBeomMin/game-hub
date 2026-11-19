@@ -59,6 +59,36 @@
       "status": "live",
       "playMode": "self",
       "url": "https://parkbeommin.github.io/swingloom/"
+    },
+    {
+      "id": "rattlecart",
+      "name": {
+        "ko": "덜컹카트",
+        "en": "Rattlecart"
+      },
+      "shortDescription": {
+        "ko": "가속과 브레이크 두 페달로 언덕을 넘고 공중에서 차를 기울여 바퀴로 착지하는 물리 드라이빙. 세 월드 18코스에서 별 3개에 도전하세요.",
+        "en": "A two-pedal physics driving game: gas, brake, tilt in mid-air and land on your wheels. Chase three stars across 18 courses in three worlds."
+      },
+      "thumbnail": "assets/games/rattlecart-thumb.webp",
+      "screenshots": [
+        "assets/games/rattlecart-shot-1.webp",
+        "assets/games/rattlecart-shot-2.webp",
+        "assets/games/rattlecart-shot-3.webp"
+      ],
+      "tags": {
+        "ko": [
+          "물리 드라이빙",
+          "타이밍"
+        ],
+        "en": [
+          "Physics driving",
+          "Timing"
+        ]
+      },
+      "status": "live",
+      "playMode": "self",
+      "url": "https://parkbeommin.github.io/rattlecart/"
     }
   ]
 }
