@@ -5,7 +5,7 @@ BeomMin Park의 오리지널 브라우저 게임을 모아 두는 허브입니�
 - 라이브: https://parkbeommin.github.io/game-hub/
 - 저장소: https://github.com/ParkBeomMin/game-hub
 
-허브 페이지에는 광고 스크립트를 넣지 않았습니다(GA4 측정만 있음). 모든 게임과 에셋은 직접 제작한 것입니다.
+허브 페이지에는 섹션 사이 반응형 AdSense 디스플레이 배너가 있습니다. 지금은 테스트 모드(`data-adtest="on"`)와 비맞춤 요청(`requestNonPersonalizedAds=1`)입니다. `data-ad-slot` 값은 자리 표시자(`0000000001`~`0000000003`)이므로, 배포 전에 AdSense에서 디스플레이 광고 단위를 만들고 슬롯 ID를 바꿔 넣어야 합니다. 실광고 전환과 EU/UK 방문자를 위한 동의 화면(CMP)은 별도 확인이 필요합니다. 모든 게임과 에셋은 직접 제작한 것입니다.
 
 ## 새 게임 추가하는 법
 
@@ -57,7 +57,7 @@ OG 이미지는 `python3 tools/build-og.py`로 다시 만듭니다. `games.json`
 
 ## 구조
 
-- `index.html`: 스토어형 레이아웃(추천 캐러셀, 바로 플레이 카드, 신작/모든 게임/장르별 탭과 상세 패널, 장르 타일, 출시 기록, FAQ)
+- `index.html`: 스토어형 레이아웃(추천 캐러셀, 바로 플레이 카드, 신작/모든 게임/장르별 탭과 상세 패널, 장르 타일, 출시 기록, FAQ). 추천 배너 뒤·둘러보기와 장르 사이·푸터 앞에 반응형 디스플레이 광고 슬롯 3곳.
 - `js/core.js`: `games.json` 로드, 언어 전환, 정렬
 - `js/app.js`: 화면 그리기
 - `css/style.css`: 스타일. 폰트는 Google Fonts의 Black Han Sans와 IBM Plex Sans KR(둘 다 OFL)
@@ -70,7 +70,7 @@ OG 이미지는 `python3 tools/build-og.py`로 다시 만듭니다. `games.json`
 python3 -m http.server 8080
 ```
 
-브라우저에서 http://localhost:8080/ 을 엽니다. `file://`로 열면 `games.json`을 불러오지 못할 수 있습니다.
+브라우저에서 http://localhost:8080/ 을 엽니다. 광고 슬롯이 비어 숨겨질 때 자리만 보려면 http://localhost:8080/?ads=preview 를 씁니다. `file://`로 열면 `games.json`을 불러오지 못할 수 있습니다.
 
 ## Pages
 

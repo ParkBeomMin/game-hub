@@ -176,6 +176,53 @@ a.cap:hover .cap-bar, a.cap:focus-visible .cap-bar { opacity: 1; }
 .help dt:first-child { margin-top: 0; }
 .help dd { margin: 2px 0 0; font-size: 0.88rem; color: #cbc7bd; }
 .err { color: var(--coral); }
+
+/* AdSense display slots between sections */
+.ad-rail {
+  width: min(100% - 32px, 1200px);
+  margin: 28px auto 4px;
+}
+/* Full-width responsive ads rewrite inner heights with !important; cap the outer rail until an ad fills. */
+.ad-rail:has(ins.adsbygoogle:not([data-ad-status="filled"])) {
+  max-height: 126px;
+  overflow: hidden;
+}
+.ad-slot {
+  width: 100%;
+  margin: 0;
+}
+.ad-slot .ad-label {
+  margin: 0 0 6px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6f7482;
+}
+.ad-slot .ad-frame {
+  min-height: 100px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ad-slot ins.adsbygoogle {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+}
+/* Auto-format ins can inflate while empty; keep a banner-sized reserve until an ad fills. */
+.ad-slot ins.adsbygoogle:not([data-ad-status="filled"]) {
+  max-height: 100px;
+  overflow: hidden;
+}
+.ad-slot:has(ins.adsbygoogle[data-ad-status="filled"]) .ad-frame {
+  min-height: 0;
+}
+html:not([data-ad-preview]) .ad-rail:has(ins.adsbygoogle[data-ad-status="unfilled"]) {
+  display: none;
+}
+
 .foot { margin-top: 56px; background: var(--bg2); border-top: 1px solid var(--line); }
 .foot-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; padding: 22px 0 calc(26px + env(safe-area-inset-bottom)); font-size: 0.82rem; color: #bdb9af; }
 .muted { color: var(--muted); }
