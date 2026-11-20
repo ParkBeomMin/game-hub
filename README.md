@@ -5,7 +5,7 @@ BeomMin Park의 오리지널 브라우저 게임을 모아 두는 허브입니�
 - 라이브: https://parkbeommin.github.io/game-hub/
 - 저장소: https://github.com/ParkBeomMin/game-hub
 
-허브 페이지에는 섹션 사이 반응형 AdSense 디스플레이 배너가 있습니다. 지금은 테스트 모드(`data-adtest="on"`)와 비맞춤 요청(`requestNonPersonalizedAds=1`)입니다. `data-ad-slot` 값은 자리 표시자(`0000000001`~`0000000003`)이므로, 배포 전에 AdSense에서 디스플레이 광고 단위를 만들고 슬롯 ID를 바꿔 넣어야 합니다. 실광고 전환과 EU/UK 방문자를 위한 동의 화면(CMP)은 별도 확인이 필요합니다. 모든 게임과 에셋은 직접 제작한 것입니다.
+허브 페이지에는 섹션 사이 반응형 AdSense 디스플레이 배너가 있습니다. 지금은 테스트 모드(`data-adtest="on"`)와 비맞춤 요청(`requestNonPersonalizedAds=1`)입니다. 슬롯은 추천 게임 아래(`3931053754`), 둘러보기 아래(`7076091848`), 푸터 위(`6340052688`)입니다. 실광고 전환과 EU/UK 방문자를 위한 동의 화면(CMP)은 별도 확인이 필요합니다. 모든 게임과 에셋은 직접 제작한 것입니다.
 
 ## 새 게임 추가하는 법
 
