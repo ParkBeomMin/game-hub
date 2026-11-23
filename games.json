@@ -92,6 +92,37 @@
       "released": "2026-11-19",
       "playMode": "self",
       "url": "https://parkbeommin.github.io/rattlecart/"
+    },
+    {
+      "id": "quiltrun",
+      "name": {
+        "ko": "퀼트런",
+        "en": "Quiltrun"
+      },
+      "shortDescription": {
+        "ko": "내 천을 벗어나 실을 끌고 크게 돌아 집으로 오면 그 안이 내 땅이 돼요. 가위 라이벌에게 실이 잘리기 전에 천의 절반을 차지하세요.",
+        "en": "Leave your patch, pull a thread and loop back home to claim the cloth inside. Grab half the quilt before a rival snips your thread."
+      },
+      "thumbnail": "assets/games/quiltrun-thumb.webp",
+      "screenshots": [
+        "assets/games/quiltrun-shot-1.webp",
+        "assets/games/quiltrun-shot-2.webp",
+        "assets/games/quiltrun-shot-3.webp"
+      ],
+      "tags": {
+        "ko": [
+          "땅따먹기",
+          "아레나"
+        ],
+        "en": [
+          "Territory",
+          "Arena"
+        ]
+      },
+      "status": "live",
+      "released": "2026-11-23",
+      "playMode": "self",
+      "url": "https://parkbeommin.github.io/quiltrun/"
     }
   ]
 }
