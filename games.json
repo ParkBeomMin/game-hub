@@ -123,6 +123,37 @@
       "released": "2026-11-23",
       "playMode": "self",
       "url": "https://parkbeommin.github.io/quiltrun/"
+    },
+    {
+      "id": "cuehop",
+      "name": {
+        "ko": "큐홉",
+        "en": "Cuehop"
+      },
+      "shortDescription": {
+        "ko": "함정이 움직이기 전에는 언제나 신호등이 먼저 켜져요. 신호를 보고 타이밍을 맞춰 뛰어, 16개의 무대 방을 지나 문까지 도착하세요.",
+        "en": "Every trap shows its cue lamp before it moves. Read the cue, time your hop and cross 16 stage rooms to the exit door."
+      },
+      "thumbnail": "assets/games/cuehop-thumb.webp",
+      "screenshots": [
+        "assets/games/cuehop-shot-1.webp",
+        "assets/games/cuehop-shot-2.webp",
+        "assets/games/cuehop-shot-3.webp"
+      ],
+      "tags": {
+        "ko": [
+          "플랫폼",
+          "함정"
+        ],
+        "en": [
+          "Platformer",
+          "Traps"
+        ]
+      },
+      "status": "live",
+      "released": "2026-11-26",
+      "playMode": "self",
+      "url": "https://parkbeommin.github.io/cuehop/"
     }
   ]
 }
