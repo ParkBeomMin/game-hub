@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="ko" data-lang="ko">
 <head>
   <meta charset="utf-8">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFCCN0JDX6"></script>
@@ -23,35 +23,39 @@
     adsbygoogle.requestNonPersonalizedAds = 1;
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Game Hub — free browser games from BeomMin’s workshop</title>
-  <meta name="description" content="A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC.">
+  <title>게임 허브 — 범민 공방의 무료 브라우저 게임</title>
+  <meta name="description" content="범민 공방에서 직접 만든 무료 브라우저 게임. 설치도 가입도 없이 휴대폰이나 PC에서 바로 한 판.">
   <link rel="canonical" href="https://parkbeommin.github.io/game-hub/">
-  <meta name="theme-color" content="#0f1115">
+  <meta name="theme-color" content="#f3eee4">
   <meta name="author" content="BeomMin Park">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Game Hub">
+  <meta property="og:site_name" content="게임 허브 · Game Hub">
   <meta property="og:url" content="https://parkbeommin.github.io/game-hub/">
-  <meta property="og:title" content="Game Hub — free browser games from BeomMin’s workshop">
-  <meta property="og:description" content="A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC.">
+  <meta property="og:title" content="게임 허브 — 범민 공방의 무료 브라우저 게임">
+  <meta property="og:description" content="범민 공방에서 직접 만든 무료 브라우저 게임. 설치도 가입도 없이 휴대폰이나 PC에서 바로 한 판.">
   <meta property="og:image" content="https://parkbeommin.github.io/game-hub/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Game Hub — free browser games from BeomMin’s workshop">
-  <meta name="twitter:description" content="A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC.">
+  <meta name="twitter:title" content="게임 허브 — 범민 공방의 무료 브라우저 게임">
+  <meta name="twitter:description" content="범민 공방에서 직접 만든 무료 브라우저 게임. 설치도 가입도 없이 휴대폰이나 PC에서 바로 한 판.">
   <meta name="twitter:image" content="https://parkbeommin.github.io/game-hub/assets/og-image.png">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Game Hub","alternateName":"게임 허브","url":"https://parkbeommin.github.io/game-hub/","inLanguage":["ko","en"]}</script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="css/style.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Game Hub","alternateName":"게임 허브","url":"https://parkbeommin.github.io/game-hub/","inLanguage":["ko","en"]}</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="css/hub.css">
   <script>
     (function () {
       var s = null; try { s = localStorage.getItem("gamehub.lang.v1"); } catch (e) {}
+      var m = /[?&]lang=(ko|en)\b/.exec(location.search); if (m) s = m[1];
       var l = (s === "ko" || s === "en") ? s : ((navigator.language || "").toLowerCase().indexOf("ko") === 0 ? "ko" : "en");
       document.documentElement.lang = l; document.documentElement.setAttribute("data-lang", l);
       if (/(?:^|[?&])ads=preview(?:&|$)/.test(location.search)) document.documentElement.setAttribute("data-ad-preview", "");
@@ -59,45 +63,62 @@
   </script>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-in">
-      <a class="brand" href="./">
-        <img src="assets/favicon.svg" width="30" height="30" alt="">
-        <span class="brand-name"><span class="i18n-ko">게임 허브</span><span class="i18n-en">GAME HUB</span></span>
-        <span class="brand-sub"><span class="i18n-ko">범민 공방</span><span class="i18n-en">by BeomMin</span></span>
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="./" aria-label="게임 허브">
+        <svg class="mark" viewBox="0 0 32 32" width="34" height="34" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#1d1b17"/>
+          <rect x="7" y="7" width="8" height="8" rx="2" fill="#ffd84d"/>
+          <rect x="17" y="7" width="8" height="8" rx="4" fill="#ff6b4a"/>
+          <rect x="7" y="17" width="8" height="8" rx="2" fill="#8fd6b4"/>
+          <path d="M18 18.5l6 2.5-6 2.5z" fill="#b9a6ff" stroke="#b9a6ff" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-txt"><b><span class="i18n-ko">게임 허브</span><span class="i18n-en">Game Hub</span></b><small><span class="i18n-ko">범민 공방</span><span class="i18n-en">BeomMin's workshop</span></small></span>
       </a>
-      <nav class="nav-links" aria-label="Main">
-        <a href="#featured"><span class="i18n-ko">추천</span><span class="i18n-en">Featured</span></a>
-        <a href="#browse"><span class="i18n-ko">둘러보기</span><span class="i18n-en">Browse</span></a>
-        <a href="#genres"><span class="i18n-ko">장르</span><span class="i18n-en">Genres</span></a>
-        <a href="#help"><span class="i18n-ko">안내</span><span class="i18n-en">Help</span></a>
+      <nav class="top-nav" aria-label="Main">
+        <a href="#games"><span class="i18n-ko">게임</span><span class="i18n-en">Games</span></a>
+        <a href="#log"><span class="i18n-ko">출시 기록</span><span class="i18n-en">Releases</span></a>
+        <a href="#faq"><span class="i18n-ko">처음이세요?</span><span class="i18n-en">New here?</span></a>
       </nav>
-      <label class="search">
-        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input id="q" type="search" autocomplete="off" data-ph-ko="게임 이름이나 장르" data-ph-en="Game or genre" aria-label="Search">
-      </label>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-set-lang="ko">한국어</button>
-        <button type="button" data-set-lang="en">EN</button>
+      <div class="top-right">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-set-lang="ko">KO</button><button type="button" data-set-lang="en">EN</button>
+        </div>
+        <a class="btn-ink quick-play" id="quick-play" href="#games"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5l9 5.5-9 5.5z" fill="currentColor"/></svg><span class="i18n-ko">바로 한 판</span><span class="i18n-en">Quick play</span></a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="featured" class="wrap featured-sec" aria-labelledby="feat-h">
-      <div class="row-head">
-        <h1 id="feat-h"><span class="i18n-ko">추천 · 신작</span><span class="i18n-en">Featured &amp; new</span></h1>
-        <p class="row-note"><span class="i18n-ko">전부 무료 · 설치 없이 브라우저에서 바로</span><span class="i18n-en">All free · runs right in your browser</span></p>
+    <section class="intro wrap">
+      <p class="eyebrow">FREE BROWSER GAMES · NO SIGN-UP</p>
+      <div class="intro-row">
+        <h1><span class="i18n-ko">누르면 바로 한 판.<br class="br-m"> <em>설치도 가입도 없어요.</em></span><span class="i18n-en">Tap and you're playing.<br class="br-m"> <em>No install, no account.</em></span></h1>
+        <a class="btn-line" href="#games"><span class="i18n-ko">게임 <b data-count>5</b>개 모두 보기</span><span class="i18n-en">See all <b data-count>5</b> games</span> <span aria-hidden="true">→</span></a>
       </div>
-      <div class="carousel" id="carousel">
-        <div class="car-stage" id="car-stage"></div>
-      </div>
-      <div class="car-ctrl"><button class="car-arrow prev" type="button" aria-label="Previous" data-car="-1"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M12.5 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        <div class="car-dots" id="car-dots"></div>
-        <button class="car-arrow next" type="button" aria-label="Next" data-car="1"><svg viewBox="0 0 20 20" width="22" height="22"><path d="M7.5 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      <p class="lede"><span class="i18n-ko">범민 공방에서 그림, 소리, 레벨까지 직접 만든 게임이에요. 휴대폰이든 PC든 링크만 누르면 그대로 켜져요.</span><span class="i18n-en">Art, sound and levels all made in our own workshop. Open the link on your phone or PC and it just runs.</span></p>
     </section>
 
-    <div class="ad-rail" id="ad-after-featured">
+    <section class="stage wrap" aria-label="Featured">
+      <div id="hero" class="hero"></div>
+      <aside class="side">
+        <div class="side-card facts">
+          <p class="side-k">HOW IT WORKS</p>
+          <ol>
+            <li><b>1</b><span><span class="i18n-ko">마음에 드는 카드를 누르고</span><span class="i18n-en">Pick a card</span></span></li>
+            <li><b>2</b><span><span class="i18n-ko">브라우저에서 바로 시작</span><span class="i18n-en">It starts in your browser</span></span></li>
+            <li><b>3</b><span><span class="i18n-ko">로그인 없이 끝까지 무료</span><span class="i18n-en">Free all the way, no login</span></span></li>
+          </ol>
+        </div>
+        <div class="side-card log" id="log">
+          <p class="side-k">RELEASE LOG</p>
+          <h2><span class="i18n-ko">공방 출시 기록</span><span class="i18n-en">Workshop releases</span></h2>
+          <ol id="release-log"></ol>
+        </div>
+      </aside>
+    </section>
+
+    <div class="ad-rail wrap" id="ad-after-featured">
     <aside class="ad-slot" aria-label="Advertisement">
       <p class="ad-label"><span class="i18n-ko">광고</span><span class="i18n-en">AD</span></p>
       <div class="ad-frame">
@@ -112,28 +133,16 @@
     </aside>
     </div>
 
-    <section class="wrap" aria-labelledby="cap-h">
-      <div class="row-head">
-        <h2 id="cap-h"><span class="i18n-ko">지금 바로 할 수 있는 게임</span><span class="i18n-en">Play right now</span></h2>
-        <p class="row-note hover-only"><span class="i18n-ko">카드에 마우스를 올리면 플레이 화면이 넘어가요</span><span class="i18n-en">Hover a card to flip through gameplay</span></p>
+    <section id="games" class="games wrap" aria-labelledby="games-h">
+      <div class="games-head">
+        <h2 id="games-h"><span class="i18n-ko">게임</span><span class="i18n-en">Games</span></h2>
+        <div class="chips" id="chips" role="tablist" aria-label="Filter"></div>
       </div>
-      <div id="capsules" class="capsules"></div>
+      <div id="grid" class="grid"></div>
+      <p id="games-error" class="err" hidden><span class="i18n-ko">게임 목록을 불러오지 못했어요. 새로고침해 주세요.</span><span class="i18n-en">Couldn't load the games. Please refresh.</span></p>
     </section>
 
-    <section id="browse" class="wrap browse" aria-labelledby="browse-h">
-      <h2 id="browse-h" class="sr"><span class="i18n-ko">둘러보기</span><span class="i18n-en">Browse</span></h2>
-      <div class="tabs" role="tablist" aria-label="Browse">
-        <button role="tab" type="button" data-tab="new"><span class="i18n-ko">신작</span><span class="i18n-en">New releases</span></button>
-        <button role="tab" type="button" data-tab="all"><span class="i18n-ko">모든 게임</span><span class="i18n-en">All games</span></button>
-        <button role="tab" type="button" data-tab="genre"><span class="i18n-ko">장르별</span><span class="i18n-en">By genre</span></button>
-      </div>
-      <div class="browse-grid">
-        <div id="list" class="list" role="tabpanel"></div>
-        <aside id="detail" class="detail" aria-live="polite"></aside>
-      </div>
-    </section>
-
-    <div class="ad-rail" id="ad-after-browse">
+    <div class="ad-rail wrap" id="ad-after-browse">
     <aside class="ad-slot" aria-label="Advertisement">
       <p class="ad-label"><span class="i18n-ko">광고</span><span class="i18n-en">AD</span></p>
       <div class="ad-frame">
@@ -148,33 +157,17 @@
     </aside>
     </div>
 
-    <section id="genres" class="wrap" aria-labelledby="genre-h">
-      <div class="row-head"><h2 id="genre-h"><span class="i18n-ko">장르로 둘러보기</span><span class="i18n-en">Browse by genre</span></h2></div>
-      <div id="genre-tiles" class="genre-tiles"></div>
-    </section>
-
-    <section class="wrap two-col" aria-label="Workshop">
-      <div class="panel log">
-        <h2><span class="i18n-ko">공방 출시 기록</span><span class="i18n-en">Release log</span></h2>
-        <ol id="release-log"></ol>
-      </div>
-      <div id="help" class="panel help">
-        <h2><span class="i18n-ko">처음 오셨나요?</span><span class="i18n-en">New here?</span></h2>
-        <dl>
-          <dt><span class="i18n-ko">가격은요?</span><span class="i18n-en">Price?</span></dt>
-          <dd><span class="i18n-ko">전부 무료예요. 계정도 로그인도 없어요.</span><span class="i18n-en">Everything is free. No account, no login.</span></dd>
-          <dt><span class="i18n-ko">뭘 설치해야 하나요?</span><span class="i18n-en">Anything to install?</span></dt>
-          <dd><span class="i18n-ko">없어요. 버튼을 누르면 휴대폰이나 PC 브라우저에서 바로 켜져요.</span><span class="i18n-en">Nothing. Hit the button and it opens in your phone or PC browser.</span></dd>
-          <dt><span class="i18n-ko">게임은 몇 개예요?</span><span class="i18n-en">How many games?</span></dt>
-          <dd><span class="i18n-ko"><b data-live-count>3</b>개: <span data-live-names>트레이오라, 스윙룸, 덜컹카트</span></span><span class="i18n-en"><b data-live-count>3</b>: <span data-live-names>Trayora, Swingloom, Rattlecart</span></span></dd>
-          <dt><span class="i18n-ko">광고는요?</span><span class="i18n-en">Ads?</span></dt>
-          <dd><span class="i18n-ko">무료로 운영하려고 게임 안과 이 허브 페이지에 광고가 나올 수 있어요. 지금은 비맞춤(비개인화) 광고로만 요청합니다.</span><span class="i18n-en">Games and this hub may show ads to stay free. For now, ad requests are non-personalized.</span></dd>
-        </dl>
+    <section id="faq" class="faq wrap" aria-labelledby="faq-h">
+      <h2 id="faq-h"><span class="i18n-ko">처음이세요?</span><span class="i18n-en">New here?</span></h2>
+      <div class="faq-grid">
+        <div class="q"><h3><span class="i18n-ko">돈 드나요?</span><span class="i18n-en">Does it cost anything?</span></h3><p><span class="i18n-ko">전부 무료예요. 계정도 로그인도 없어요.</span><span class="i18n-en">Everything is free. No account, no login.</span></p></div>
+        <div class="q"><h3><span class="i18n-ko">뭘 깔아야 하나요?</span><span class="i18n-en">Anything to install?</span></h3><p><span class="i18n-ko">없어요. 카드를 누르면 휴대폰이나 PC 브라우저에서 바로 켜져요.</span><span class="i18n-en">Nothing. Tap a card and it opens in your phone or PC browser.</span></p></div>
+        <div class="q"><h3><span class="i18n-ko">게임은 몇 개예요?</span><span class="i18n-en">How many games?</span></h3><p><span class="i18n-ko"><b data-count>5</b>개: <span data-names></span></span><span class="i18n-en"><b data-count>5</b>: <span data-names></span></span></p></div>
+        <div class="q"><h3><span class="i18n-ko">광고는요?</span><span class="i18n-en">Ads?</span></h3><p><span class="i18n-ko">무료로 운영하려고 게임 안과 이 허브에 광고가 나올 수 있어요. 지금은 비맞춤(비개인화) 광고로만 요청해요.</span><span class="i18n-en">Games and this hub may show ads to stay free. For now, ad requests are non-personalized.</span></p></div>
       </div>
     </section>
-    <p id="games-error" class="wrap err" hidden><span class="i18n-ko">게임 목록을 불러오지 못했어요. 새로고침해 주세요.</span><span class="i18n-en">Couldn’t load the games. Please refresh.</span></p>
 
-    <div class="ad-rail" id="ad-before-footer">
+    <div class="ad-rail wrap" id="ad-before-footer">
     <aside class="ad-slot" aria-label="Advertisement">
       <p class="ad-label"><span class="i18n-ko">광고</span><span class="i18n-en">AD</span></p>
       <div class="ad-frame">
@@ -188,18 +181,17 @@
       </div>
     </aside>
     </div>
-
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot-in">
-      <span class="brand-name small"><span class="i18n-ko">게임 허브</span><span class="i18n-en">GAME HUB</span></span>
-      <span><span class="i18n-ko">모든 게임의 그림과 소리는 범민 공방에서 직접 만들었어요.</span><span class="i18n-en">Every game’s art and sound is made in-house.</span></span>
-      <span class="muted">© 2026 BeomMin Park</span>
-    </div>
+  <footer class="foot wrap">
+    <b><span class="i18n-ko">게임 허브</span><span class="i18n-en">Game Hub</span></b>
+    <span><span class="i18n-ko">모든 게임의 그림과 소리는 범민 공방에서 직접 만들었어요.</span><span class="i18n-en">Every game's art and sound is made in-house.</span></span>
+    <span class="muted">© 2026 BeomMin Park</span>
   </footer>
-  <script src="js/app.js" defer></script>
-  <script src="js/core.js" defer></script>
+
+  <a class="dock" id="dock" href="#games" hidden></a>
+
+  <script src="js/hub.js" defer></script>
   <script>
     (function () {
       window.adsbygoogle = window.adsbygoogle || [];
@@ -212,13 +204,8 @@
         document.querySelectorAll(".ad-rail").forEach(function (rail) {
           var ins = rail.querySelector("ins.adsbygoogle");
           var filled = ins && ins.getAttribute("data-ad-status") === "filled";
-          if (filled) {
-            rail.style.removeProperty("max-height");
-            rail.style.removeProperty("overflow");
-          } else {
-            rail.style.setProperty("max-height", "126px", "important");
-            rail.style.setProperty("overflow", "hidden", "important");
-          }
+          if (filled) { rail.style.removeProperty("max-height"); rail.style.removeProperty("overflow"); }
+          else { rail.style.setProperty("max-height", "126px", "important"); rail.style.setProperty("overflow", "hidden", "important"); }
         });
       }
       constrainRails();

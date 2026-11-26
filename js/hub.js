@@ -1,13 +1,13 @@
-/* Game Hub preview — reads ../games.json, draws a small code-made preview for each game. */
+/* Game Hub — reads games.json, draws a small code-made preview for each game. */
 (() => {
   const LANG_KEY = "gamehub.lang.v1";
   const T = {
     ko: { newest: "방금 나온 신작", play: "바로 시작", noSign: "가입 · 설치 없음", all: "전체", recent: "최근 7일", newStamp: "NEW",
       empty: "최근 7일 안에 나온 게임이 없어요.", released: (d) => `${d} 공개`, dockK: "NEW · 방금 나온 게임", dockGo: "한 판 하기",
-      date: (d) => `${d.getMonth() + 1}.${String(d.getDate()).padStart(2, "0")}`, longDate: (d) => `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일`, title: "게임 허브 (새 디자인 미리보기)" },
+      date: (d) => `${d.getMonth() + 1}.${String(d.getDate()).padStart(2, "0")}`, longDate: (d) => `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일`, title: "게임 허브 — 범민 공방의 무료 브라우저 게임", desc: "범민 공방에서 직접 만든 무료 브라우저 게임. 설치도 가입도 없이 휴대폰이나 PC에서 바로 한 판." },
     en: { newest: "Just released", play: "Play now", noSign: "No sign-up · no install", all: "All", recent: "Last 7 days", newStamp: "NEW",
       empty: "Nothing released in the last 7 days.", released: (d) => `Released ${d}`, dockK: "NEW · just released", dockGo: "Play",
-      date: (d) => `${d.getMonth() + 1}.${String(d.getDate()).padStart(2, "0")}`, longDate: (d) => d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }), title: "Game Hub (design preview)" },
+      date: (d) => `${d.getMonth() + 1}.${String(d.getDate()).padStart(2, "0")}`, longDate: (d) => d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }), title: "Game Hub — free browser games from BeomMin’s workshop", desc: "Free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC." },
   };
   const TONES = { trayora: "#dcd3ff", swingloom: "#cfe6ff", rattlecart: "#ffe0c7", quiltrun: "#d3f0dc", cuehop: "#ffd8e3" };
   const DOTS = { trayora: "#4aa3e0", swingloom: "#ffd84d", rattlecart: "#f2b630", quiltrun: "#4d7cf0", cuehop: "#e8483a" };
@@ -173,7 +173,7 @@
       draw(c, 1.3);
       if (!reduce && "IntersectionObserver" in window) io.observe(screen);
     } else {
-      screen = el("img", { src: "../" + g.thumbnail, alt: loc(g.name), loading: "lazy" });
+      screen = el("img", { src: g.thumbnail, alt: loc(g.name), loading: "lazy" });
     }
     return el("div", { class: "cart", style: { "--dot": dot(g) } }, [screen, el("div", { class: "cart-lbl" }, [el("span", { text: no(g) }), el("i")])]);
   }
@@ -249,6 +249,9 @@
   function render() {
     const html = document.documentElement; html.lang = S.lang; html.setAttribute("data-lang", S.lang);
     document.title = T[S.lang].title;
+    const setMeta = (sel, v) => { const n = document.querySelector(sel); if (n) n.setAttribute("content", v); };
+    setMeta('meta[name="description"]', T[S.lang].desc); setMeta('meta[property="og:title"]', T[S.lang].title); setMeta('meta[property="og:description"]', T[S.lang].desc);
+    setMeta('meta[name="twitter:title"]', T[S.lang].title); setMeta('meta[name="twitter:description"]', T[S.lang].desc); setMeta('meta[property="og:locale"]', S.lang === "ko" ? "ko_KR" : "en_US");
     document.querySelectorAll("[data-set-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.setLang === S.lang)));
     live.clear();
     const g = newest(), lv = chronological().filter(playable);
@@ -267,7 +270,7 @@
   async function init() {
     render();
     try {
-      const r = await fetch("../games.json", { cache: "no-cache" });
+      const r = await fetch("games.json", { cache: "no-cache" });
       if (!r.ok) throw new Error("games.json " + r.status);
       const d = await r.json();
       S.games = (Array.isArray(d) ? d : d.games || []).filter((g) => g && g.id);

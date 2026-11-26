@@ -224,8 +224,7 @@ def main() -> None:
     GAMES.mkdir(parents=True, exist_ok=True)
     ICONS.mkdir(parents=True, exist_ok=True)
     print("Building assets…")
-    favicon_svg()
-    icons()
+    # favicon.svg and assets/icons/*.png now come from tools/build-og.py (2026-11 redesign mark).
     trayora_thumb()
     trayora_shots()
     swingloom_thumb()
