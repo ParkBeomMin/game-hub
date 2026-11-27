@@ -1,6 +1,6 @@
 # Game Hub
 
-BeomMin Park의 오리지널 브라우저 게임을 모아 두는 허브입니다.
+한판공방(Hanpan Gongbang)의 오리지널 브라우저 게임을 모아 두는 허브입니다.
 
 - 라이브: https://parkbeommin.github.io/game-hub/
 - 저장소: https://github.com/ParkBeomMin/game-hub

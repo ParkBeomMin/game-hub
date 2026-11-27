@@ -1,7 +1,7 @@
 {
-  "name": "Game Hub · BeomMin Park",
+  "name": "Game Hub · Hanpan Gongbang",
   "short_name": "Game Hub",
-  "description": "Free browser games made by BeomMin Park. No install, no sign-up.",
+  "description": "Free browser games made at Hanpan Gongbang. No install, no sign-up.",
   "start_url": "/game-hub/",
   "scope": "/game-hub/",
   "display": "browser",

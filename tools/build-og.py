@@ -45,7 +45,7 @@ for y in range(11, H, 22):
     for x in range(11, W, 22): d.ellipse((x - 1, y - 1, x + 1, y + 1), fill=DOT)
 mk = mark(64); im.paste(mk, (64, 58), mk)
 d.text((144, 60), "게임 허브", font=f("Bold", 34), fill=INK)
-d.text((145, 100), "범민 공방", font=f("Medium", 19), fill=MUTE)
+d.text((145, 100), "한판공방", font=f("Medium", 19), fill=MUTE)
 d.text((64, 170), "FREE BROWSER GAMES · NO SIGN-UP", font=mono(18), fill=CORAL)
 d.text((62, 204), "누르면 바로 한 판.", font=f("Bold", 60), fill=INK)
 d.rectangle((62, 318, 548, 346), fill=BUTTER)
@@ -53,7 +53,7 @@ d.text((62, 276), "설치도 가입도 없어요.", font=f("Bold", 60), fill=INK
 d.text((64, 384), "휴대폰이든 PC든 링크만 누르면 그대로 켜져요.", font=f("Medium", 25), fill=INK2)
 d.rounded_rectangle((64, 450, 330, 510), 30, fill=INK)
 d.text((197, 480), f"게임 {len(live)}개 무료 플레이", font=f("Bold", 23), fill=(255, 255, 255), anchor="mm")
-d.text((64, 556), "parkbeommin.github.io/game-hub", font=mono(20), fill=MUTE)
+d.text((64, 556), "HANPAN GONGBANG", font=mono(20), fill=MUTE)
 
 if newest:
     # pastel tile with an ink "cartridge" holding the newest game's cover, tilted like the site hero

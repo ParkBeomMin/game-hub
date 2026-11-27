@@ -247,8 +247,8 @@
 
   window.HUB = {
     meta: {
-      ko: { title: "게임 허브 — 범민 공방의 무료 브라우저 게임", desc: "범민 공방이 직접 만든 무료 브라우저 게임 스토어. 설치도 가입도 없이 폰과 PC에서 바로 플레이." },
-      en: { title: "Game Hub — free browser games from BeomMin’s workshop", desc: "A small store shelf of free browser games, all made in-house by BeomMin Park. No install, no sign-up. Phone or PC." },
+      ko: { title: "게임 허브 — 한판공방의 무료 브라우저 게임", desc: "한판공방이 직접 만든 무료 브라우저 게임 스토어. 설치도 가입도 없이 폰과 PC에서 바로 플레이." },
+      en: { title: "Game Hub — free browser games from Hanpan Gongbang", desc: "A small store shelf of free browser games, all made in-house at Hanpan Gongbang. No install, no sign-up. Phone or PC." },
     },
     render(ctx) {
       S.ctx = ctx;
